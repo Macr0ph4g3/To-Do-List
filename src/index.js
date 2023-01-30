@@ -1,15 +1,18 @@
-import _ from 'lodash';
-// import './style.css';
+import './style.css';
+import addButton from './toDoCreatorDom'
+import cardCreator from './CardCreator'
+import toDoArray from './objectArray'
+import arrayImport from './arrayImport'
 // import Icon from './icon.png';
 
+addButton
 
-function component() {
-  const element = document.createElement('div');
+cardCreator(toDoArray)
+let newObjectTest = { 
+    firstInstance: 'test3',
+    secondInstant: 'test4',
+    thirdInstant: 'test5'
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  return element;
 }
-
-document.body.appendChild(component());
+arrayImport(newObjectTest)
+cardCreator(toDoArray)

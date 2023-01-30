@@ -1,0 +1,8 @@
+import toDoArray from './objectArray'
+
+function arrayImport(object) {
+    toDoArray.unshift(object)
+    
+}
+
+export default arrayImport

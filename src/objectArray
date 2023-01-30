@@ -1,0 +1,16 @@
+const toDoObject = { 
+    firstInstance: 'test',
+    secondInstant: 'test2',
+    thirdInstant: 'test3'
+
+}
+const toDoObject2 = { 
+    firstInstance: 'test3',
+    secondInstant: 'test4',
+    thirdInstant: 'test5'
+
+}
+
+const toDoArray = [toDoObject, toDoObject2]
+
+export default toDoArray
