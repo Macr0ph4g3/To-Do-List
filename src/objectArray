@@ -1,16 +1,13 @@
-const toDoObject = { 
-    firstInstance: 'test',
-    secondInstant: 'test2',
-    thirdInstant: 'test3'
 
+function ToDoConstructor(t,d,dd,p,pr) {
+    this.title = t
+    this.description = d
+    this.dueDate = dd
+    this.priority = p
+    this.project = pr
 }
-const toDoObject2 = { 
-    firstInstance: 'test3',
-    secondInstant: 'test4',
-    thirdInstant: 'test5'
+const toDoObjectOne = new ToDoConstructor('Finish Odin Project','I want to be a web developer','Jan, 1, 2024', 'High', 'Life-Goals')
 
-}
+const toDoArray = []
 
-const toDoArray = [toDoObject, toDoObject2]
-
-export default toDoArray
+export default {toDoArray, toDoObjectOne}

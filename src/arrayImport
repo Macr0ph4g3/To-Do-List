@@ -1,7 +1,7 @@
 import toDoArray from './objectArray'
 
 function arrayImport(object) {
-    toDoArray.unshift(object)
+    toDoArray.toDoArray.unshift(object)
     
 }
 

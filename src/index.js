@@ -6,13 +6,6 @@ import arrayImport from './arrayImport'
 // import Icon from './icon.png';
 
 addButton
+arrayImport(toDoArray.toDoObjectOne)
 
-cardCreator(toDoArray)
-let newObjectTest = { 
-    firstInstance: 'test3',
-    secondInstant: 'test4',
-    thirdInstant: 'test5'
-
-}
-arrayImport(newObjectTest)
-cardCreator(toDoArray)
+cardCreator(toDoArray.toDoArray)
