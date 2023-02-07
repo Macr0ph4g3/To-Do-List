@@ -72,6 +72,7 @@ background: linear-gradient(185deg, rgba(230,213,202,1) 0%, rgba(197,228,208,1) 
 height: 90vh;
 width: 85vw;
 flex-direction: column;
+overflow-y:auto
 }
 #main {
     display: flex;

@@ -1,4 +1,4 @@
-import toDoArray from './objectArray'
+import toDoArray from './objectArray.js'
 
 function arrayImport(object) {
     toDoArray.toDoArray.unshift(object)

@@ -1,21 +1,35 @@
 //This creates a new ToDo item
 
-
+import projectsArray from "./projectsArray"
 
 function cardCreator(object) {
+    
+    const rightNav = document.querySelector('.rightNav')
+        const mainDiv = document.querySelector('#main')
+        rightNav.remove()
+
+        const newRightNav = document.createElement('div')
+        newRightNav.classList.add('rightNav')
+        mainDiv.appendChild(newRightNav)
+
     object.forEach( (element, index) => {
-        console.log(element, index)
         let title = element.title
         let description = element.description
         let dueDate = element.dueDate
         let priority = element.priority
         let project = element.project
-        
-        const rightNav = document.querySelector('.rightNav')
 
+        if (project != projectsArray.selectedProject) {
+            console.log(`${element.title} is not apart of the selected project`)
+            return;
+        }
+        console.log(`Running the forEach for ${element.title}`)
+// This section identifies the Right-hand section of the site, removes it each time the function is run and replaces it
+
+        
         let container = document.createElement('div')
         container.classList.add('toDoContainer')
-        rightNav.appendChild(container)
+        newRightNav.appendChild(container)
 
         let statusContainer = document.createElement('div')
         container.appendChild(statusContainer)
@@ -54,12 +68,12 @@ function cardCreator(object) {
 
 
         // This outputs both the key's name and the values of said key
-        for (const [key, value] of Object.entries(element)) {
+        // for (const [key, value] of Object.entries(element)) {
             
-            console.log(`${key}: ${value}`);
+        //     console.log(`${key}: ${value}`);
 
             
-          }
+        //   }
               });
 }
 
