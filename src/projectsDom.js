@@ -16,6 +16,9 @@ function projectsDom(object) {
         let deletable = element.deletable
 
         const project = document.createElement('div')
+// this creates the div that will hold both Title and color circle
+//
+
         project.innerHTML = title
         project.classList.add('projectTitle')
         project.dataset.pi = index

@@ -72,7 +72,7 @@ background: linear-gradient(185deg, rgba(230,213,202,1) 0%, rgba(197,228,208,1) 
 height: 90vh;
 width: 85vw;
 flex-direction: column;
-overflow-y:auto
+overflow-y:auto;
 }
 #main {
     display: flex;
@@ -120,7 +120,9 @@ overflow-y:auto
     width: 85%;
 }
 .newToDo {
+    z-index: 2;
     position:absolute;right: 5%;bottom: 5%;
+    
 }
 #newToDoButton {
     height: 50px;
@@ -128,26 +130,127 @@ overflow-y:auto
     border-radius: 4px;
     border: none;
     background-color: #B36A5E;
+
 }
 
+.projectTitle {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.projectTitle:hover {
+    color: white
+}
 .popUp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    z-index: auto;
     animation: move 1s ease forwards;
-    height: 70vh;
-    width: 45vw;
+    height: 12vh;
+    width: 12vw;
     border-radius: 6px;
     transition-property: all;
     animation-iteration-count: 1;
+    animation-name: move
 }
 @keyframes move {
     from {
         background-color: none;
-        position: absolute; right: 10%; bottom: 10%
+        position: absolute; right: 5%;bottom: 5%;
     }
     to {
-        position: absolute; right: 20%; bottom: 10%;
+        position: absolute; right: 3.5%;bottom: 10%;
         transform: translate(-10%, -10%);
         background-color: #B36A5E;
 
     }
     
+}
+.new {
+    padding-left: 10px
+}
+.new:hover { 
+    color: white
+}
+.formOne {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 15vh;
+
+
+}
+
+.formTwo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 25vh;
+
+
+}
+
+.projectForm {
+    background-color: #B36A5E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 12vh;
+    width: 12vw;
+    border-radius: 6px;
+    transition-property: all;
+    animation: move 1s ease forwards;
+    animation-name: projectMoves;
+}
+@keyframes projectMoves {
+    from {
+        background-color: #B36A5E;
+        position: absolute; right: 5%;bottom: 5%;
+
+    }
+    to {
+        position: absolute; right: 3.5%;bottom: 10%;
+        transform: translate(-10%, -10%);
+        background-color: #B36A5E;
+        height: 15vh
+
+    }
+    
+
+}
+
+.toDoForm {
+    background-color: #B36A5E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 12vh;
+    width: 12vw;
+    border-radius: 6px;
+    transition-property: all;
+    animation: move 1s ease forwards;
+    animation-name: toDoMoves;
+}
+@keyframes toDoMoves {
+    from {
+        background-color: #B36A5E;
+        position: absolute; right: 5%;bottom: 5%;
+
+    }
+    to {
+        position: absolute; right: 3.5%;bottom: 10%;
+        transform: translate(-10%, -10%);
+        background-color: #B36A5E;
+        height: 30vh
+
+    }
+    
+
+
 }
