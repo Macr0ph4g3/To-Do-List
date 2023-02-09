@@ -147,23 +147,25 @@ overflow-y:auto;
     flex-direction: column;
     justify-content: space-evenly;
     z-index: auto;
-    animation: move 1s ease forwards;
+    animation: move 0.5s ease forwards;
     height: 12vh;
-    width: 12vw;
+    width: clamp(150px, 12vw, 12vw);
     border-radius: 6px;
     transition-property: all;
     animation-iteration-count: 1;
-    animation-name: move
+    animation-name: move;
+    position: absolute; right: 3.5%;bottom: 9%;
+    transform: translate(-13%, -10%);
+
 }
 @keyframes move {
     from {
         background-color: none;
-        position: absolute; right: 5%;bottom: 5%;
     }
     to {
-        position: absolute; right: 3.5%;bottom: 10%;
-        transform: translate(-10%, -10%);
         background-color: #B36A5E;
+        position: absolute; right: 3.5%;bottom: 10%;
+
 
     }
     
@@ -180,8 +182,7 @@ overflow-y:auto;
     align-items: center;
     justify-content: space-evenly;
     height: 15vh;
-
-
+    width: 12vw;
 }
 
 .formTwo {
@@ -190,7 +191,19 @@ overflow-y:auto;
     align-items: center;
     justify-content: space-evenly;
     height: 25vh;
+    width: 12vw;
 
+
+}
+
+.formOne input {
+    width: clamp(125px, 10vw, 10vw);
+
+
+}
+
+.formTwo input {
+    width: clamp(125px, 10vw, 10vw);
 
 }
 
@@ -201,21 +214,23 @@ overflow-y:auto;
     align-items: center;
     justify-content: space-around;
     height: 12vh;
-    width: 12vw;
+    width: clamp(150px, 12vw, 12vw);
     border-radius: 6px;
     transition-property: all;
     animation: move 1s ease forwards;
     animation-name: projectMoves;
+    position: absolute; right: 3.5%;bottom: 10%;
+    transform: translate(-13%, -10%);
+    
+
+
 }
 @keyframes projectMoves {
     from {
         background-color: #B36A5E;
-        position: absolute; right: 5%;bottom: 5%;
 
     }
     to {
-        position: absolute; right: 3.5%;bottom: 10%;
-        transform: translate(-10%, -10%);
         background-color: #B36A5E;
         height: 15vh
 
@@ -231,21 +246,21 @@ overflow-y:auto;
     align-items: center;
     justify-content: space-around;
     height: 12vh;
-    width: 12vw;
+    width: clamp(150px, 12vw, 12vw);
     border-radius: 6px;
     transition-property: all;
     animation: move 1s ease forwards;
     animation-name: toDoMoves;
+    position: absolute; right: 3.5%;bottom: 10%;
+    transform: translate(-13%, -10%);
+
 }
 @keyframes toDoMoves {
     from {
         background-color: #B36A5E;
-        position: absolute; right: 5%;bottom: 5%;
 
     }
     to {
-        position: absolute; right: 3.5%;bottom: 10%;
-        transform: translate(-10%, -10%);
         background-color: #B36A5E;
         height: 30vh
 

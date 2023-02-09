@@ -59,10 +59,7 @@ function toDoPopUp() {
 
         newProject.addEventListener("click", newProjectCreator)
         newToDo.addEventListener("click", newToDoCreator)
-
-
-
-    
+  
     } else {
         console.log('null')
         return 
