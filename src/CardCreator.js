@@ -19,11 +19,12 @@ function cardCreator(object) {
         let priority = element.priority
         let project = element.project
 
-        if (project != projectsArray.selectedProject) {
+        //Logic to determine if the currently selected project matches the to do items project. It will set both to lowercase and remove spaces to ensure it's the same.
+        
+        if (project.toLowerCase().trim() != projectsArray.selectedProject.toLowerCase().trim()) {
             console.log(`${element.title} is not apart of the selected project`)
             return;
         }
-        console.log(`Running the forEach for ${element.title}`)
 // This section identifies the Right-hand section of the site, removes it each time the function is run and replaces it
 
         

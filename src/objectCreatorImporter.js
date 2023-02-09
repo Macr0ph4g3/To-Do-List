@@ -1,9 +1,76 @@
+import toDoCreator from "./toDoCreator"
+import projectCreator from "./projectCreator"
+
 const Button = document.getElementById("newToDoButton")
 const mainDiv = document.getElementById("main")
-// Button.addEventListener("mouseleave", removePopUp)
-Button.addEventListener("mouseover", toDoPopUp)
 
-function newProjectCreator() {
+Button.addEventListener("mouseover", newPopUp)
+
+// popup for adding new To Do Dom AND for removing existing doms
+
+function newPopUp() {  
+      
+    let existingPopUp = document.querySelector('.popUp')
+    let existingPForm = document.querySelector('.projectForm')
+    let existingTForm = document.querySelector('.toDoForm')
+    let rightNav = document.querySelector('.rightNav')
+
+    rightNav.addEventListener('click',removePopUp)
+
+    //Logic to close form if clicking on rightNav
+
+function removePopUp() {
+    let popUp = document.querySelectorAll('.popUp')
+    let pForm = document.querySelectorAll('.projectForm')
+    let tForm = document.querySelectorAll('.toDoForm')
+    if(popUp.length == 1) {
+        setTimeout(() => {
+            popUp[0].remove()
+        }, "100")
+        } else if (pForm.length == 1) {
+            setTimeout(() => {
+
+            pForm[0].remove()
+        }, "100")} 
+        else if (tForm.length == 1) {
+            setTimeout(() => {
+
+            tForm[0].remove()
+        }, "100") } 
+
+
+}
+
+//logic to create a popup form if there are no existing popup forms showing
+
+    if( existingPopUp === null && existingPForm === null && existingTForm == null ) {
+        const popUp = document.createElement('div')
+        popUp.classList.add('popUp')
+        mainDiv.appendChild(popUp)
+
+        const newProject = document.createElement('div')
+        const newToDo = document.createElement('div')
+
+        newProject.innerHTML = 'New Project'
+        newToDo.innerHTML = 'New To-Do'
+
+        newProject.classList.add('new')
+        newToDo.classList.add('new')
+
+        popUp.append(newProject,newToDo)
+        
+        newProject.addEventListener("click", newProjectForm)
+        newToDo.addEventListener("click", newToDoForm)
+  
+    } else {
+        console.log('null')
+        return 
+    }
+}
+
+//this creates the popup for the Project form if selected
+
+function newProjectForm() {
 
     const newObjects = document.querySelectorAll('.new')
     newObjects[0].remove()
@@ -18,57 +85,29 @@ function newProjectCreator() {
     projectForm.classList.add('formOne')
         
     //create input element for Project Name
+
     let pName = document.createElement("input");
     pName.setAttribute("type", "text")
     pName.setAttribute("name", "Project Name")
     pName.setAttribute("placeHolder", "New Project")
 
     let formSubmit = document.createElement("input")
-    formSubmit.setAttribute("type", "submit")
+    formSubmit.setAttribute("type", "button")
+    formSubmit.setAttribute('id', 'submit')
     formSubmit.setAttribute("value", "Submit")
 
     existingPopUp.appendChild(projectForm)
-    projectForm.appendChild(pName)
-    projectForm.appendChild(formSubmit)
+    projectForm.append(pName, formSubmit)
+
+    let submitButton = document.getElementById('submit')
+    submitButton.addEventListener('click', projectCreator)
+
 
 }
 
+//this creates the popup for the To Do form if selected
 
-// popup for adding new To Do Dom
-function toDoPopUp() {
-    console.log('mouseover activate')
-    let existingPopUp = document.querySelector('.popUp')
-    let existingForm = document.querySelector('.form')
-    if( existingPopUp === null && existingForm === null ) {
-        const popUp = document.createElement('div')
-        popUp.classList.add('popUp')
-        mainDiv.appendChild(popUp)
-
-        const newProject = document.createElement('div')
-        const newToDo = document.createElement('div')
-
-        newProject.innerHTML = 'New Project'
-        newToDo.innerHTML = 'New To-Do'
-
-        newProject.classList.add('new')
-        newToDo.classList.add('new')
-
-        popUp.appendChild(newProject)
-        popUp.appendChild(newToDo)
-
-
-        newProject.addEventListener("click", newProjectCreator)
-        newToDo.addEventListener("click", newToDoCreator)
-  
-    } else {
-        console.log('null')
-        return 
-    }
-}
-
-
-
-function newToDoCreator() {
+function newToDoForm() {
 
     const newObjects = document.querySelectorAll('.new')
     newObjects[0].remove()
@@ -85,57 +124,43 @@ function newToDoCreator() {
     //create input element for Project Name
     let tName = document.createElement("input");
     tName.setAttribute("type", "text")
-    tName.setAttribute("name", "toDoTitle")
+    tName.setAttribute("name", "Name")
     tName.setAttribute("placeHolder", "Title")
 
     let tDescription = document.createElement("input");
     tDescription.setAttribute("type", "text")
-    tDescription.setAttribute("name", "toDoTitle")
+    tDescription.setAttribute("name", "Description")
     tDescription.setAttribute("placeHolder", "Description")
 
     let tDueDate = document.createElement("input");
     tDueDate.setAttribute("type", "text")
-    tDueDate.setAttribute("name", "toDoTitle")
+    tDueDate.setAttribute("name", "Due Date")
     tDueDate.setAttribute("placeHolder", "Due Date")
 
     let tPriority = document.createElement("input");
     tPriority.setAttribute("type", "text")
-    tPriority.setAttribute("name", "toDoTitle")
+    tPriority.setAttribute("name", "Priority")
     tPriority.setAttribute("placeHolder", "Priority")
 
     let tProject = document.createElement("input");
     tProject.setAttribute("type", "text")
-    tProject.setAttribute("name", "toDoTitle")
+    tProject.setAttribute("name", "Project")
     tProject.setAttribute("placeHolder", "Project")
 
-
     let formSubmit = document.createElement("input")
-    formSubmit.setAttribute("type", "submit")
+    formSubmit.setAttribute("type", "button")
+    formSubmit.setAttribute('id', 'submit')
     formSubmit.setAttribute("value", "Submit")
 
     existingPopUp.appendChild(toDoForm)
-    toDoForm.appendChild(tName)
-    toDoForm.appendChild(tDescription)
-    toDoForm.appendChild(tDueDate)
-    toDoForm.appendChild(tPriority)
-    toDoForm.appendChild(tProject)
-    toDoForm.appendChild(formSubmit)
 
+    toDoForm.append(tName,tDescription,tDueDate,tPriority,tProject,formSubmit)
 
+    let submitButton = document.getElementById('submit')
+    submitButton.addEventListener('click', toDoCreator)
 }
 
 
-function removePopUp() {
-    console.log('mouseleave activate')
-    let popUp = document.querySelectorAll('.popUp')
-    console.log(popUp[0])
-    popUp[0].classList.add('popUpBeGone')
-    setTimeout(() => {
-        popUp[0].remove()
-
-    }, "1000")
-
-}
 // Make this work so that it persists if in the proper divs.
 
-export default {toDoPopUp}
+export default {newPopUp}

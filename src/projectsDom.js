@@ -25,7 +25,6 @@ function projectsDom(object) {
         project.addEventListener("click", selectProject)
 
         function selectProject() {
-            console.log('hi')
             projectsArray.selectedProject = object[project.dataset.pi].title
             console.log(projectsArray.selectedProject)
             cardCreator(toDoArray.toDoArray)
