@@ -11,10 +11,13 @@ function projectCreator() {
     //If all the fields are filled then create new ToDo object, import into array and run cardCreator.
 if(newTitle != ""){
 
+    let properTitle = newTitle.charAt(0).toUpperCase() + newTitle.slice(1);
+
+    console.log(newTitle)
 let projectArray = projectsArray.projectsArray;
 
 let duplicateProject = projectArray.filter(function(project){
-    return project.title == newTitle;
+    return project.title == properTitle;
 
 })
 
@@ -23,7 +26,6 @@ console.log(duplicateProject)
 switch (duplicateProject.length) {
 
     case (duplicateProject.length = 0) :
-    let properTitle = newTitle.charAt(0).toUpperCase() + newTitle.slice(1);
     
     console.log(properTitle)
 
