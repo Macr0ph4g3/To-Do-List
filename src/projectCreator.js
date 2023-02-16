@@ -4,40 +4,44 @@ import { forEach } from 'lodash'
 
 
 function projectCreator() {
-    
+
     let projectInfo = document.querySelectorAll('input')
-    console.log(projectInfo)
-    let title = projectInfo[0].value
+    let newTitle = projectInfo[0].value
+
     //If all the fields are filled then create new ToDo object, import into array and run cardCreator.
-if(title != ""){
+if(newTitle != ""){
+
+let projectArray = projectsArray.projectsArray;
+
+let duplicateProject = projectArray.filter(function(project){
+    return project.title == newTitle;
+
+})
 
 
+console.log(duplicateProject)
+switch (duplicateProject.length) {
 
-
-    projectsArray.projectsArray.forEach(element => {
-            let arrayList = element.title
-            console.log(arrayList)
-            console.log(title)
-        if (title.trim().toLowerCase == arrayList.trim().toLowerCase() ){
-            console.log(title, projectsArray.projectsArray)
-            return
-        }
-
-});    
-
-
-
-let project = new projectsArray.ProjectsConstructor("color", title, "Yes")
-
-    projectsArray.projectsArray.push(project)
-    projectsDom(projectsArray.projectsArray)
+    case (duplicateProject.length = 0) :
+    let properTitle = newTitle.charAt(0).toUpperCase() + newTitle.slice(1);
     
-    projectInfo[0].value = ""
-    
-    let pForm = document.querySelectorAll('.projectForm')
-    pForm[0].remove()
-    }
+    console.log(properTitle)
 
+    let project = new projectsArray.ProjectsConstructor("color", properTitle, "Yes");
+        /* vendors contains the element we're looking for */
+        projectsArray.projectsArray.push(project);
+        projectsDom(projectsArray.projectsArray);
+        projectInfo[0].value = "";
+        let pForm = document.querySelectorAll('.projectForm');
+        pForm[0].remove();
+
+    
+}
+}
 }
 
+
 export default projectCreator
+
+// I need to run through the projectsArray.projectsArray and check each value (projectsArray[0].title) and if it equals title, set a variable to True. Then an if statement.
+// if variable == true, don't add new object to array 

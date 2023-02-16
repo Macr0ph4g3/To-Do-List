@@ -10,4 +10,7 @@ const toDoObjectOne = new ToDoConstructor('Finish Odin Project','I want to be a 
 
 const toDoArray = []
 
+
+toDoArray.unshift(toDoObjectOne)
+
 export default {toDoArray, toDoObjectOne, ToDoConstructor}

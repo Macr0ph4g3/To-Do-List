@@ -77,7 +77,6 @@ function newProjectForm() {
     newObjects[1].remove()
 
     const existingPopUp = document.querySelector('.popUp')
-    console.log(existingPopUp)
     existingPopUp.classList.add('projectForm')
     existingPopUp.classList.remove('popUp')
 
