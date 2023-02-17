@@ -1,6 +1,6 @@
 import toDoArray from './objectArray.js'
 import cardCreator from './CardCreator'
-
+import projectsArray from './projectsArray'
 
 function toDoCreator() {
     
@@ -13,6 +13,9 @@ function toDoCreator() {
     let project = toDoInfo[4].value
     //If all the fields are filled then create new ToDo object, import into array and run cardCreator.
     if(title != "" && description != "" && dueDate != "" && priority != "" && project != "" ){
+    
+    
+
     let newToDo = new toDoArray.ToDoConstructor(title, description, dueDate, priority, project)
 
     toDoArray.toDoArray.unshift(newToDo)

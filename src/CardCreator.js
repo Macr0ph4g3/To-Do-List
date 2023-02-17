@@ -38,7 +38,7 @@ function cardCreator(object) {
 
         let statusButton = document.createElement('button')
         statusContainer.appendChild(statusButton)
-        statusButton.classList.add('statusButtonActive')
+        statusButton.classList.add('check')
 
         let toDoContentContainer = document.createElement('div')
         container.appendChild(toDoContentContainer)
@@ -60,11 +60,19 @@ function cardCreator(object) {
         let dueDateText = document.createTextNode(`${dueDate}`)
         toDoContentDueDate.appendChild(dueDateText)
         toDoContentDueDate.classList.add('toDoDueDate')
-        
+
+
+        let toDoProject  = document.createElement('div')
+        let projectText = document.createTextNode(`${project}`)
+        toDoProject.appendChild(projectText)
+        toDoProject.classList.add('toDoProject')
+
         
         toDoContentContainer.appendChild(toDoContentTitle)
-        toDoContentContainer.appendChild(toDoContentDescription)
         toDoContentContainer.appendChild(toDoContentDueDate)
+        toDoContentContainer.appendChild(toDoContentDescription)
+        toDoContentContainer.appendChild(toDoProject)
+
 
 
 

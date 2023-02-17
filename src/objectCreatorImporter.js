@@ -90,13 +90,26 @@ function newProjectForm() {
     pName.setAttribute("name", "Project Name")
     pName.setAttribute("placeHolder", "New Project")
 
+    let pColor = document.createElement("input");
+    pColor.classList.add('.pColor')
+    pColor.setAttribute("type", "button")
+    pColor.setAttribute("name", "Project Color")
+    pColor.setAttribute("placeHolder", "Color")
+
+
     let formSubmit = document.createElement("input")
     formSubmit.setAttribute("type", "button")
     formSubmit.setAttribute('id', 'submit')
     formSubmit.setAttribute("value", "Submit")
 
     existingPopUp.appendChild(projectForm)
-    projectForm.append(pName, formSubmit)
+    projectForm.append(pName, pColor, formSubmit)
+
+    // AColorPicker.from('.rightNav')
+    // .on('change', (picker, color => {
+    //     document.body.style.backgroundColor = color; }) )
+
+
 
     let submitButton = document.getElementById('submit')
     submitButton.addEventListener('click', projectCreator)
