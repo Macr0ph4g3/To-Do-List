@@ -3,13 +3,14 @@ import cardCreator from './CardCreator'
 import toDoArray from './objectArray.js'
 
 function projectsDom(object) {
-    const leftList = document.getElementsByClassName('leftList')
-    const leftMain = document.getElementsByClassName('leftNav')
+    console.log('projectsDOM initiated')
+    const leftList = document.getElementsByClassName('projectList')
+    const leftMain = document.getElementById('sidebarMenu')
     leftList[0].remove()
 
-    const newProjects = document.createElement('div')
-    newProjects.classList.add('leftList')
-    leftMain[0].appendChild(newProjects)
+    const newProjects = document.createElement('ul')
+    newProjects.classList.add('projectList')
+    leftMain.appendChild(newProjects)
     object.forEach((element, index) => {
         let color = element.color
         let title = element.title
@@ -17,7 +18,7 @@ function projectsDom(object) {
 
 // this creates the div that will hold both Title and color circle
 //
-const projectBox = document.createElement('div')
+const projectBox = document.createElement('li')
 const project = document.createElement('div')
 const projectColor = document.createElement('div')
 
@@ -29,16 +30,17 @@ projectBox.dataset.pi = index
     project.addEventListener("click", selectProject)
 
 projectColor.classList.add('projectColor')
-        function selectProject() {
-            projectsArray.selectedProject = object[projectBox.dataset.pi].title
-            console.log(projectsArray.selectedProject)
-            cardCreator(toDoArray.toDoArray)
-        }
+
+function selectProject() {
+    projectsArray.selectedProject = object[projectBox.dataset.pi].title
+    cardCreator(toDoArray.toDoArray)
+}
     
         newProjects.appendChild(projectBox)
         projectBox.appendChild(projectColor)      
         projectBox.appendChild(project)      
 
+        
     });
 }
 

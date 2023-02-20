@@ -50,10 +50,21 @@ function cardCreator(object) {
         toDoContentTitle.classList.add('toDoTitle')
 
         let toDoContentDescription  = document.createElement('div')
-        let descriptionText = document.createTextNode(`${description}`)
         toDoContentDescription.classList.add('toDoDescription')
 
-        toDoContentDescription.appendChild(descriptionText)
+        if (description.length > 150 ) {
+            console.log('long description')
+            let shortenedDescription = description.substring(0,120)
+            let descriptionText = document.createTextNode(`${shortenedDescription}. . .`)
+            toDoContentDescription.appendChild(descriptionText)
+
+        } else {
+            console.log('short description')
+            let descriptionText = document.createTextNode(`${description}`)
+            toDoContentDescription.appendChild(descriptionText)
+
+        }
+
 
 
         let toDoContentDueDate  = document.createElement('div')

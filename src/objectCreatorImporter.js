@@ -89,6 +89,7 @@ function newProjectForm() {
     pName.setAttribute("type", "text")
     pName.setAttribute("name", "Project Name")
     pName.setAttribute("placeHolder", "New Project")
+    pName.setAttribute("id", "pName")
 
     let pColor = document.createElement("input");
     pColor.classList.add('.pColor')
@@ -125,51 +126,58 @@ function newToDoForm() {
     newObjects[0].remove()
     newObjects[1].remove()
 
-    const existingPopUp = document.querySelector('.popUp')
-    console.log(existingPopUp)
-    existingPopUp.classList.add('toDoForm')
-    existingPopUp.classList.remove('popUp')
+        const existingPopUp = document.querySelector('.popUp')
+        console.log(existingPopUp)
+        existingPopUp.classList.add('toDoForm')
+        existingPopUp.classList.remove('popUp')
 
-    const toDoForm = document.createElement('form')
-    toDoForm.classList.add('formTwo')
-        
-    //create input element for Project Name
-    let tName = document.createElement("input");
-    tName.setAttribute("type", "text")
-    tName.setAttribute("name", "Name")
-    tName.setAttribute("placeHolder", "Title")
+        const toDoForm = document.createElement('form')
+        toDoForm.classList.add('formTwo')
+            
+        //create input element for Project Name
+        let tName = document.createElement("input");
+        tName.setAttribute("type", "text")
+        tName.setAttribute("name", "Name")
+        tName.setAttribute("placeHolder", "Title")
+        tName.setAttribute("id", "tName")
 
-    let tDescription = document.createElement("input");
-    tDescription.setAttribute("type", "text")
-    tDescription.setAttribute("name", "Description")
-    tDescription.setAttribute("placeHolder", "Description")
+        let tDescription = document.createElement("input");
+        tDescription.setAttribute("type", "text")
+        tDescription.setAttribute("name", "Description")
+        tDescription.setAttribute("placeHolder", "Description")
+        tDescription.setAttribute("id", "tDescription")
 
-    let tDueDate = document.createElement("input");
-    tDueDate.setAttribute("type", "text")
-    tDueDate.setAttribute("name", "Due Date")
-    tDueDate.setAttribute("placeHolder", "Due Date")
 
-    let tPriority = document.createElement("input");
-    tPriority.setAttribute("type", "text")
-    tPriority.setAttribute("name", "Priority")
-    tPriority.setAttribute("placeHolder", "Priority")
+        let tDueDate = document.createElement("input");
+        tDueDate.setAttribute("type", "text")
+        tDueDate.setAttribute("name", "Due Date")
+        tDueDate.setAttribute("placeHolder", "Due Date")
+        tDueDate.setAttribute("id", "tDueDate")
 
-    let tProject = document.createElement("input");
-    tProject.setAttribute("type", "text")
-    tProject.setAttribute("name", "Project")
-    tProject.setAttribute("placeHolder", "Project")
+        let tPriority = document.createElement("input");
+        tPriority.setAttribute("type", "text")
+        tPriority.setAttribute("name", "Priority")
+        tPriority.setAttribute("placeHolder", "Priority")
+        tPriority.setAttribute("id", "tPriority")
 
-    let formSubmit = document.createElement("input")
-    formSubmit.setAttribute("type", "button")
-    formSubmit.setAttribute('id', 'submit')
-    formSubmit.setAttribute("value", "Submit")
+        let tProject = document.createElement("input");
+        tProject.setAttribute("type", "text")
+        tProject.setAttribute("name", "Project")
+        tProject.setAttribute("placeHolder", "Project")
+        tProject.setAttribute("id", "tProject")
 
-    existingPopUp.appendChild(toDoForm)
 
-    toDoForm.append(tName,tDescription,tDueDate,tPriority,tProject,formSubmit)
+        let formSubmit = document.createElement("input")
+        formSubmit.setAttribute("type", "button")
+        formSubmit.setAttribute('id', 'submit')
+        formSubmit.setAttribute("value", "Submit")
 
-    let submitButton = document.getElementById('submit')
-    submitButton.addEventListener('click', toDoCreator)
+        existingPopUp.appendChild(toDoForm)
+
+        toDoForm.append(tName,tDescription,tDueDate,tPriority,tProject,formSubmit)
+
+        let submitButton = document.getElementById('submit')
+        submitButton.addEventListener('click', toDoCreator)
 }
 
 

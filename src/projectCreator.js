@@ -5,8 +5,9 @@ import { forEach } from 'lodash'
 
 function projectCreator() {
 
-    let projectInfo = document.querySelectorAll('input')
-    let newTitle = projectInfo[0].value
+    let projectInfo = document.querySelector('#pName')
+    console.log(projectInfo.value)
+    let newTitle = projectInfo.value
 
     //If all the fields are filled then create new ToDo object, import into array and run cardCreator.
 if(newTitle != ""){
@@ -33,7 +34,7 @@ switch (duplicateProject.length) {
         /* vendors contains the element we're looking for */
         projectsArray.projectsArray.push(project);
         projectsDom(projectsArray.projectsArray);
-        projectInfo[0].value = "";
+        projectInfo.value = "";
         let pForm = document.querySelectorAll('.projectForm');
         pForm[0].remove();
 

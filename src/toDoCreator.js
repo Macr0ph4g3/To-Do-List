@@ -4,13 +4,22 @@ import projectsArray from './projectsArray'
 
 function toDoCreator() {
     
+    let tName = document.querySelector('#tName')
+    let tDescription = document.querySelector('#tDescription')
+    let tDueDate = document.querySelector('#tDueDate')
+    let tPriority = document.querySelector('#tPriority')
+    let tProject = document.querySelector('#tProject')
+    let formSubmit = document.querySelector('#formSubmit')
+
+
     let toDoInfo = document.querySelectorAll('input')
+    
     console.log(toDoInfo)
-    let title = toDoInfo[0].value
-    let description = toDoInfo[1].value
-    let dueDate = toDoInfo[2].value 
-    let priority = toDoInfo[3].value
-    let project = toDoInfo[4].value
+    let title = tName.value
+    let description = tDescription.value
+    let dueDate = tDueDate.value 
+    let priority = tPriority.value
+    let project = tProject.value
     //If all the fields are filled then create new ToDo object, import into array and run cardCreator.
     if(title != "" && description != "" && dueDate != "" && priority != "" && project != "" ){
     
@@ -21,11 +30,11 @@ function toDoCreator() {
     toDoArray.toDoArray.unshift(newToDo)
     cardCreator(toDoArray.toDoArray)
     
-    toDoInfo[0].value = ""
-    toDoInfo[1].value = ""
-    toDoInfo[2].value = ""
-    toDoInfo[3].value = ""
-    toDoInfo[4].value = ""
+    tName.value = ""
+    tDescription.value = ""
+    tDueDate.value = ""
+    tPriority.value = ""
+    tProject.value = ""
     
     let toDoForm = document.getElementsByClassName('toDoForm')
     toDoForm[0].remove()
