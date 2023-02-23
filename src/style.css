@@ -192,10 +192,10 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
         width: 84vw;
     }
     .toDoTitle {
-        width: clamp(150px, 35vw,35vw);
+        width: clamp(150px, 20vw,20vw);
     }
     .toDoDescription {
-        width: clamp(150px, 35vw,35vw);
+        width: clamp(150px, 20vw,20vw);
     }
     
     .check {
@@ -232,8 +232,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     
     .toDoContent {
         display: grid;
-        grid-template-columns: [column1-start] 3fr [column2-start] 1fr;
-        width: clamp(150px, 75vw, 75vw);
+        grid-template-columns: [column1-start] 1fr [column2-start] 1fr;
+        width: clamp(150px, 40vw, 40vw);
         overflow-wrap: break-word
     }
     .toDoTitle { 

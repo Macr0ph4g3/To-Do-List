@@ -1,5 +1,8 @@
 import toDoCreator from "./toDoCreator"
 import projectCreator from "./projectCreator"
+import projectsArray from "./projectsArray"
+import { forEach } from "lodash"
+
 
 const Button = document.getElementById("newToDoButton")
 const mainDiv = document.getElementById("main")
@@ -122,50 +125,57 @@ function newProjectForm() {
 
 function newToDoForm() {
 
-    const newObjects = document.querySelectorAll('.new')
-    newObjects[0].remove()
-    newObjects[1].remove()
+    const newObjects = document.querySelectorAll('.new');
+    newObjects[0].remove();
+    newObjects[1].remove();
 
-        const existingPopUp = document.querySelector('.popUp')
-        console.log(existingPopUp)
-        existingPopUp.classList.add('toDoForm')
-        existingPopUp.classList.remove('popUp')
+        const existingPopUp = document.querySelector('.popUp');
+        console.log(existingPopUp);
+        existingPopUp.classList.add('toDoForm');
+        existingPopUp.classList.remove('popUp');
 
-        const toDoForm = document.createElement('form')
-        toDoForm.classList.add('formTwo')
+        const toDoForm = document.createElement('form');
+        toDoForm.classList.add('formTwo');
             
         //create input element for Project Name
         let tName = document.createElement("input");
-        tName.setAttribute("type", "text")
-        tName.setAttribute("name", "Name")
-        tName.setAttribute("placeHolder", "Title")
-        tName.setAttribute("id", "tName")
+        tName.setAttribute("type", "text");
+        tName.setAttribute("name", "Name");
+        tName.setAttribute("placeHolder", "Title");
+        tName.setAttribute("id", "tName");
 
         let tDescription = document.createElement("input");
-        tDescription.setAttribute("type", "text")
-        tDescription.setAttribute("name", "Description")
-        tDescription.setAttribute("placeHolder", "Description")
-        tDescription.setAttribute("id", "tDescription")
+        tDescription.setAttribute("type", "text");
+        tDescription.setAttribute("name", "Description");
+        tDescription.setAttribute("placeHolder", "Description");
+        tDescription.setAttribute("id", "tDescription");
 
 
         let tDueDate = document.createElement("input");
-        tDueDate.setAttribute("type", "text")
-        tDueDate.setAttribute("name", "Due Date")
-        tDueDate.setAttribute("placeHolder", "Due Date")
-        tDueDate.setAttribute("id", "tDueDate")
+        tDueDate.setAttribute("type", "text");
+        tDueDate.setAttribute("name", "Due Date");
+        tDueDate.setAttribute("placeHolder", "Due Date");
+        tDueDate.setAttribute("id", "tDueDate");
 
         let tPriority = document.createElement("input");
-        tPriority.setAttribute("type", "text")
-        tPriority.setAttribute("name", "Priority")
-        tPriority.setAttribute("placeHolder", "Priority")
-        tPriority.setAttribute("id", "tPriority")
+        tPriority.setAttribute("type", "text");
+        tPriority.setAttribute("name", "Priority");
+        tPriority.setAttribute("placeHolder", "Priority");
+        tPriority.setAttribute("id", "tPriority");
 
-        let tProject = document.createElement("input");
-        tProject.setAttribute("type", "text")
-        tProject.setAttribute("name", "Project")
-        tProject.setAttribute("placeHolder", "Project")
-        tProject.setAttribute("id", "tProject")
+        let tProject = document.createElement("label");
+        tProject.innerHTML = "Project: "
+        tProject.setAttribute("id", "tProject");
 
+        let tProjectSelector = document.createElement("select")
+        projectsArray.projectsArray.forEach(project => {
+            let projectOption = document.createElement("option");
+            projectOption.setAttribute("value", project.title)
+            projectOption.innerHTML = project.title
+            console.log(projectOption)
+            tProjectSelector.appendChild(projectOption)
+        });
+        tProject.appendChild(tProjectSelector)
 
         let formSubmit = document.createElement("input")
         formSubmit.setAttribute("type", "button")

@@ -23,8 +23,7 @@ function toDoCreator() {
     //If all the fields are filled then create new ToDo object, import into array and run cardCreator.
     if(title != "" && description != "" && dueDate != "" && priority != "" && project != "" ){
     
-    
-
+   
     let newToDo = new toDoArray.ToDoConstructor(title, description, dueDate, priority, project)
 
     toDoArray.toDoArray.unshift(newToDo)
@@ -39,7 +38,7 @@ function toDoCreator() {
     let toDoForm = document.getElementsByClassName('toDoForm')
     toDoForm[0].remove()
     }
-
 }
+
 
 export default toDoCreator
