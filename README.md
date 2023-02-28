@@ -1,7 +1,9 @@
 # To-Do-List
 This is my To-Do-List I'm working on for the Odin Project. This was one I wanted to actually flesh out a little bit more than previous projects.
 
-## Current version is 0.5
+## Current version is 0.5.1
+
+### Updated the To Do Creator script so that it pulls the proper value for the new Project field. Also remove some Console Logs from CardCreator to not make as much noise in the console.
 
 ## Roadmap to 1.0
 

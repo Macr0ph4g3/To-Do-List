@@ -8,7 +8,7 @@ function toDoCreator() {
     let tDescription = document.querySelector('#tDescription')
     let tDueDate = document.querySelector('#tDueDate')
     let tPriority = document.querySelector('#tPriority')
-    let tProject = document.querySelector('#tProject')
+    let tProject = document.querySelector('#projectSelect')
     let formSubmit = document.querySelector('#formSubmit')
 
 

@@ -168,6 +168,7 @@ function newToDoForm() {
         tProject.setAttribute("id", "tProject");
 
         let tProjectSelector = document.createElement("select")
+        tProjectSelector.setAttribute('id','projectSelect')
         projectsArray.projectsArray.forEach(project => {
             let projectOption = document.createElement("option");
             projectOption.setAttribute("value", project.title)

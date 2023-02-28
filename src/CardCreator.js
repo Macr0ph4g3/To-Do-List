@@ -53,13 +53,11 @@ function cardCreator(object) {
         toDoContentDescription.classList.add('toDoDescription')
 
         if (description.length > 150 ) {
-            console.log('long description')
             let shortenedDescription = description.substring(0,120)
             let descriptionText = document.createTextNode(`${shortenedDescription}. . .`)
             toDoContentDescription.appendChild(descriptionText)
 
         } else {
-            console.log('short description')
             let descriptionText = document.createTextNode(`${description}`)
             toDoContentDescription.appendChild(descriptionText)
 
