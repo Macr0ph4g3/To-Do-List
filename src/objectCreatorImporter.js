@@ -136,6 +136,12 @@ function newToDoForm() {
 
         const toDoForm = document.createElement('form');
         toDoForm.classList.add('formTwo');
+
+        const leftForm = document.createElement('div')
+        const rightForm = document.createElement('div')
+        leftForm.classList.add('leftForm')
+        rightForm.classList.add('rightForm')
+        
             
         //create input element for Project Name
         let tName = document.createElement("input");
@@ -144,8 +150,7 @@ function newToDoForm() {
         tName.setAttribute("placeHolder", "Title");
         tName.setAttribute("id", "tName");
 
-        let tDescription = document.createElement("input");
-        tDescription.setAttribute("type", "text");
+        let tDescription = document.createElement("textarea");
         tDescription.setAttribute("name", "Description");
         tDescription.setAttribute("placeHolder", "Description");
         tDescription.setAttribute("id", "tDescription");
@@ -185,7 +190,9 @@ function newToDoForm() {
 
         existingPopUp.appendChild(toDoForm)
 
-        toDoForm.append(tName,tDescription,tDueDate,tPriority,tProject,formSubmit)
+        toDoForm.append(leftForm,rightForm)
+        leftForm.append(tName,tDescription,tProject)
+        rightForm.append(tDueDate,tPriority,formSubmit)
 
         let submitButton = document.getElementById('submit')
         submitButton.addEventListener('click', toDoCreator)
