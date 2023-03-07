@@ -1,5 +1,5 @@
 import toDoArray from './objectArray.js'
-import cardCreator from './CardCreator'
+import cardCreator from './toDoCardCreator'
 import projectsArray from './projectsArray'
 
 function toDoCreator() {

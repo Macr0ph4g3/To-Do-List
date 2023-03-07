@@ -11,6 +11,9 @@ body {
     margin: 0;
     font-family: 'Varela Round', sans-serif;
 }
+
+/*Below is the CSS Code for the Pure CSS SideBAR Toggle Menu*/
+
 .header {
     display: block;
     margin: 0 auto;
@@ -177,11 +180,6 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
         height: 100vh;
         width: clamp(150px, 100vw, 100vw);   
         }
-    
-    .leftHeader {
-        margin-top: 5vh;
-        height: 3vh;
-    }
     .toDoContainer {
         display: flex;
         align-items: center;
@@ -190,10 +188,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
         margin-left: 3vw;
         padding-left: 2vw;
         width: clamp(90vw, 75vw,75vw);
-
         justify-content: space-evenly;
     }
-
     .toDoContainer:hover {
         background-color: rgba(0,0,0,0.2)
         }
@@ -227,8 +223,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
         mask-image:none;
         mask-image:url(/src/images/Empty-circle-2-outline-svg.svg);
         -webkit-mask-image: url(/src/images/Empty-circle-2-outline-svg.svg);
-    }
-    
+    }  
     .checked {
         height: clamp(100px, 53vh, 53vh);
         width: clamp(100px, 2vw, 2vw);
@@ -240,8 +235,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
         mask-image:url(/src/images/checkmark-circle-2-outline.svg);
         -webkit-mask-image: url(/src/images/checkmark-circle-2-outline.svg);
     
-    }
-    
+    }  
     .toDoContent {
         display: grid;
         grid-template-columns: [column1-start] 1fr [column2-start] 1fr;
@@ -254,10 +248,6 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     .toDoDueDate {
         font-size: small;
         width: clamp(75px, 5vw, 5vw);
-    }
-    .seperator {
-        border: 1px solid #888888;
-        width: 85%;
     }
     .newToDo {
         z-index: 2;
@@ -291,7 +281,6 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     .projectTitle {
         display: flex;
     }
-    
     .projectTitle:hover {
         color: white
     }
@@ -322,38 +311,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     
         }
         
-    }
-    .new {
-        padding-left: 10px
-    }
-    .new:hover { 
-        color: white
-    }
-    .formOne {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        height: 15vh;
-        width: 12vw;
-    }
-    
-    .formTwo {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        height: 70vh;
-        width: 70vw;
-    
-    }
-    
-    .formOne input {
-        width: clamp(125px, 10vw, 10vw);
-    
-    
-    }
-
-    
+    } 
     .projectForm {
         background-color: #B36A5E;
         display: flex;
@@ -380,8 +338,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
             background-color: #B36A5E;
             height: 15vh
         }
-    }
-    
+    } 
     .toDoForm {
         background-color: #B36A5E;
         display: flex;
@@ -408,49 +365,6 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
             width: 70vw;
         }
     }
-
-.leftForm {
-    display: flex;
-    align-items: stretch;
-    flex-direction: column;
-    width: 50vw;
-    height: 70vh;
-    justify-content: space-evenly;
-
-}
-.rightForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 13vw;
-    height: 70vh;
-}
-.rightForm input {
-    width: 8vw;
-}
-
-#tName {
-    height: 8vh;
-    font-size: 2em;
-    margin-left: 1.5vw;
-}
-#tDescription {
-    height: 40vh;
-    font-size: 1.5em;
-    margin-left: 1.5vw;
-}
-#tProject {
-    height: 4vh;
-    font-size: 1.2em;
-    margin-left: 1.5vw;
-}
-#projectSelect {
-    height: 4vh;
-    font-size: 1em;
-    margin-left: 1.5vw;
-    border-radius: 4px;
-}
 .toDoOptions{
     display: flex;
     width: 15vw;
@@ -458,11 +372,10 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     align-items: center;
     align-content: center;
 }
-
 .toDoTrash {
-    width: 30px;
-    height: 30px;
-    background-image: url('./images/trash-outline.svg');
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0,0,0,0);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -472,12 +385,12 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     text-decoration: none;
 }
 .toDoTrash:hover {
-    background-color: rgb(163, 163, 163);
+    background-color: rgb(211, 211, 211);
 }
 .toDoEdit {
-    width: 30px;
-    height: 30px;
-    background-image: url('./images/edit-outline.svg');
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0,0,0,0);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -487,5 +400,62 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     text-decoration: none;
 }
 .toDoEdit:hover {
-    background-color: rgb(163, 163, 163);
+    background-color: rgb(211, 211, 211);
 }
+.ProjectTitle {
+    display: flex;
+    align-items: center;
+
+}
+.ProjectTitle span {
+    cursor: pointer;
+    color: white;
+    transition: 0.5s;
+
+
+}
+.ProjectTitle span:hover {
+    transition: 0.5s;
+    transform: rotate(45deg)
+}
+.newProject {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+#pName {
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 99, 71, 0.10);
+    background-color: rgba(0,0,0,0);
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    height: 20px;
+    text-align: center;
+}
+#pName::placeholder{
+    color: gray
+}
+.pConfirm {
+    transition: 0.5s;
+}
+.pConfirm:hover{ 
+    transform: rotate(45deg)
+}
+.newToDoTwo {
+    display: flex;
+    align-items: center;
+    margin-top: 4vh;
+    margin-bottom: 1vh;
+    margin-left: 3vw;
+    padding-left: 2vw;
+    width: clamp(90vw, 75vw,75vw);
+    justify-content: space-evenly;
+}
+.newToDoTwo:hover {
+    background-color: rgba(0,0,0,0.2)
+    }

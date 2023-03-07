@@ -2,7 +2,7 @@ import toDoArray from './objectArray.js'
 import cardCreator from './toDoCardCreator'
 
 function deleteToDo() {
-    let clickedProject = document.querySelectorAll('.toDoTrash')
+    let clickedProject = document.querySelectorAll('.check')
     clickedProject.forEach(project => {
         project.addEventListener('click', test)
     });
