@@ -27,7 +27,7 @@ projectBox.dataset.pi = index
 
     project.innerHTML = title
     project.classList.add('projectTitle')
-    project.addEventListener("click", selectProject)
+    projectBox.addEventListener("click", selectProject)
 
 projectColor.classList.add('projectColor')
 

@@ -1,9 +1,9 @@
 //This creates a new ToDo item
-
 import projectsArray from "./projectsArray"
+import toDoEdit from "./toDoEdit"
 
 function cardCreator(object) {
-    
+    console.log('running CardCreator')
     const rightNav = document.querySelector('.rightNav')
         const mainDiv = document.querySelector('#main')
         rightNav.remove()
@@ -31,6 +31,7 @@ function cardCreator(object) {
         let container = document.createElement('div')
         container.classList.add('toDoContainer')
         newRightNav.appendChild(container)
+        container.dataset.id = index
 
         let statusContainer = document.createElement('div')
         container.appendChild(statusContainer)
@@ -82,7 +83,18 @@ function cardCreator(object) {
         toDoContentContainer.appendChild(toDoContentDescription)
         toDoContentContainer.appendChild(toDoProject)
 
+        let toDoEditTrash = document.createElement('div')
+        toDoEditTrash.classList.add("toDoOptions")
 
+        let edit = document.createElement('button')
+        edit.classList.add('toDoEdit')
+
+        let trash = document.createElement('button')
+        trash.classList.add('toDoTrash')
+
+        container.appendChild(toDoEditTrash)
+        toDoEditTrash.appendChild(trash)
+        toDoEditTrash.appendChild(edit)
 
 
         // This outputs both the key's name and the values of said key
@@ -93,6 +105,7 @@ function cardCreator(object) {
             
         //   }
               });
+              toDoEdit(toDoEdit.myFunctionWorks)
 }
-
+    
 export default cardCreator

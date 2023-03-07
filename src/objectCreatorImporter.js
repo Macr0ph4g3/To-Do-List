@@ -22,28 +22,7 @@ function newPopUp() {
 
     //Logic to close form if clicking on rightNav
 
-function removePopUp() {
-    let popUp = document.querySelectorAll('.popUp')
-    let pForm = document.querySelectorAll('.projectForm')
-    let tForm = document.querySelectorAll('.toDoForm')
-    if(popUp.length == 1) {
-        setTimeout(() => {
-            popUp[0].remove()
-        }, "100")
-        } else if (pForm.length == 1) {
-            setTimeout(() => {
-
-            pForm[0].remove()
-        }, "100")} 
-        else if (tForm.length == 1) {
-            setTimeout(() => {
-
-            tForm[0].remove()
-        }, "100") } 
-
-
-}
-
+    removePopUp()
 //logic to create a popup form if there are no existing popup forms showing
 
     if( existingPopUp === null && existingPForm === null && existingTForm == null ) {
@@ -69,6 +48,27 @@ function removePopUp() {
         console.log('null')
         return 
     }
+}
+
+function removePopUp() {
+    let popUp = document.querySelectorAll('.popUp')
+    let pForm = document.querySelectorAll('.projectForm')
+    let tForm = document.querySelectorAll('.toDoForm')
+    if(popUp.length == 1) {
+        setTimeout(() => {
+            popUp[0].remove()
+        }, "100")
+        } else if (pForm.length == 1) {
+            setTimeout(() => {
+
+            pForm[0].remove()
+        }, "100")} 
+        else if (tForm.length == 1) {
+            setTimeout(() => {
+
+            tForm[0].remove()
+        }, "100") } 
+
 }
 
 //this creates the popup for the Project form if selected
@@ -124,10 +124,17 @@ function newProjectForm() {
 //this creates the popup for the To Do form if selected
 
 function newToDoForm() {
-
-    const newObjects = document.querySelectorAll('.new');
-    newObjects[0].remove();
-    newObjects[1].remove();
+//This was all just added in an attempt to make clicking todo's edit
+    const newObjects = document.querySelectorAll('.toDoForm');
+    if (newObjects.length >= 1) {  
+        newObjects.remove()
+        
+    } else {
+        const popUp = document.createElement('div')
+        popUp.classList.add('popUp')
+        mainDiv.appendChild(popUp)
+    }
+//The above was all just added in an attempt to make clicking todo's edit
 
         const existingPopUp = document.querySelector('.popUp');
         console.log(existingPopUp);
@@ -201,4 +208,4 @@ function newToDoForm() {
 
 // Make this work so that it persists if in the proper divs.
 
-export default {newPopUp}
+export default {newPopUp, newToDoForm}

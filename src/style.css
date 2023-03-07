@@ -58,7 +58,6 @@ body {
     padding:0;
     border-top: 1px solid rgba(255, 255, 255, 0.10);
     Overflow-y: Scroll; 
-    height: 35vh
 }
 .sidebarMenuInner::-webkit-scrollbar{ 
     display: none;
@@ -77,7 +76,7 @@ body {
     padding:0;
     border-top: 1px solid rgba(255, 255, 255, 0.10);
     Overflow-y: Scroll; 
-    height: 35vh
+    height: 75vh
 }
 .projectList::-webkit-scrollbar{
     display: none;
@@ -190,7 +189,9 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
         margin-bottom: 1vh;
         margin-left: 3vw;
         padding-left: 2vw;
-        width: 84vw;
+        width: clamp(90vw, 75vw,75vw);
+
+        justify-content: space-evenly;
     }
 
     .toDoContainer:hover {
@@ -202,10 +203,16 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     .toDoDescription {
         width: clamp(150px, 20vw,20vw);
     }
-    
+    .toDoStatus {
+        width: clamp(25px, 85px, 85px);
+        height: clamp(25px, 65px, 65px);
+        display: flex;
+        align-items: center;
+
+    }
     .check {
-        height: clamp(100px, 3vh, 3vh);
-        width: clamp(100px, 2vw, 2vw);
+        width: clamp(30px, 65px, 65px);
+        height: clamp(40px, 65px, 65px);
         margin-right: 15px;
         background-color: rgb(59, 55, 55);
         border-radius: 50%;
@@ -223,7 +230,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     }
     
     .checked {
-        height: clamp(100px, 3vh, 3vh);
+        height: clamp(100px, 53vh, 53vh);
         width: clamp(100px, 2vw, 2vw);
         margin-right: 15px;
         background-color: rgb(135, 180, 135); 
@@ -238,7 +245,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     .toDoContent {
         display: grid;
         grid-template-columns: [column1-start] 1fr [column2-start] 1fr;
-        width: clamp(150px, 40vw, 40vw);
+        width: clamp(200px, 40vw, 40vw);
         overflow-wrap: break-word
     }
     .toDoTitle { 
@@ -246,7 +253,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     }
     .toDoDueDate {
         font-size: small;
-        width: clamp(150px, 5vw, 5vw);
+        width: clamp(75px, 5vw, 5vw);
     }
     .seperator {
         border: 1px solid #888888;
@@ -267,7 +274,6 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     }
     .project {
         display: flex;
-        margin-top: 20px;
         justify-content: center;
         align-items: center;
     
@@ -444,4 +450,42 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     font-size: 1em;
     margin-left: 1.5vw;
     border-radius: 4px;
+}
+.toDoOptions{
+    display: flex;
+    width: 15vw;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.toDoTrash {
+    width: 30px;
+    height: 30px;
+    background-image: url('./images/trash-outline.svg');
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    text-decoration: none;
+}
+.toDoTrash:hover {
+    background-color: rgb(163, 163, 163);
+}
+.toDoEdit {
+    width: 30px;
+    height: 30px;
+    background-image: url('./images/edit-outline.svg');
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    text-decoration: none;
+}
+.toDoEdit:hover {
+    background-color: rgb(163, 163, 163);
 }
