@@ -1,10 +1,12 @@
 import toDoArray from './objectArray.js'
 import cardCreator from './toDoCardCreator'
+import Storage from './Storage'
+
 
 function deleteToDo() {
-    let clickedProject = document.querySelectorAll('.toDoTrash')
-    clickedProject.forEach(project => {
-        project.addEventListener('click', test)
+    let trashList = document.querySelectorAll('.toDoTrash')
+    trashList.forEach(trash => {
+        trash.addEventListener('click', test)
     });
     
 }
@@ -13,6 +15,7 @@ function test() {
     let parentID = this.parentElement.parentElement.dataset.id
     console.log(parentID)
     toDoArray.toDoArray.splice(parentID, 1)
+    Storage.toDoStorageSetup()
     cardCreator(toDoArray.toDoArray)
 
 }
