@@ -3,9 +3,9 @@ import toDoCreator from "./toDoCreator"
 
 
 function newToDo() {
-    //This is the "+ New Task" at the top of the Main-Right
+    // This is the "+ New Task" at the top of the Main-Right
 const newTask = document.createElement('div')
-    newTask.classList.add('newToDoTwo')
+    newTask.classList.add('taskCreator')
 
 const newPlusText = document.createElement('p')
     newPlusText.innerHTML = 'New Task'
@@ -29,44 +29,44 @@ const rightNav = document.querySelector('.rightNav')
 
 
     const toDoForm = document.createElement('form');
-        toDoForm.classList.add('toDoContainer')
+        toDoForm.classList.add('toDoForm')
 
     
         
-    //create input element for Project Name
-    let tName = document.createElement("input");
+    // Create input element for Project Name
+    const tName = document.createElement("input");
         tName.setAttribute("type", "text");
         tName.setAttribute("name", "Name");
         tName.setAttribute("placeHolder", "Title");
         tName.setAttribute("id", "tName");
 
-    let tDescription = document.createElement("textarea");
+    const tDescription = document.createElement("textarea");
         tDescription.setAttribute("name", "Description");
         tDescription.setAttribute("placeHolder", "Description");
         tDescription.setAttribute("id", "tDescription");
 
 
-    let tDueDate = document.createElement("input");
+    const tDueDate = document.createElement("input");
         tDueDate.setAttribute("type", "text");
         tDueDate.setAttribute("name", "Due Date");
         tDueDate.setAttribute("placeHolder", "Due Date");
         tDueDate.setAttribute("id", "tDueDate");
 
-    let tPriority = document.createElement("input");
+    const tPriority = document.createElement("input");
         tPriority.setAttribute("type", "text");
         tPriority.setAttribute("name", "Priority");
         tPriority.setAttribute("placeHolder", "Priority");
         tPriority.setAttribute("id", "tPriority");
 
-    let tProject = document.createElement("label");
+    const tProject = document.createElement("label");
         tProject.innerHTML = "Project: "
         tProject.setAttribute("id", "tProject");
 
-    let tProjectSelector = document.createElement("select")
+    const tProjectSelector = document.createElement("select")
         tProjectSelector.setAttribute('id','projectSelect')
 
     projectsArray.projectsArray.forEach(project => {
-        let projectOption = document.createElement("option");
+        const projectOption = document.createElement("option");
             projectOption.setAttribute("value", project.title)
             projectOption.innerHTML = project.title
     tProjectSelector.appendChild(projectOption)
@@ -74,29 +74,29 @@ const rightNav = document.querySelector('.rightNav')
 
     tProject.appendChild(tProjectSelector)
 
-    let formSubmit = document.createElement("input")
+    const formSubmit = document.createElement("input")
     formSubmit.setAttribute("type", "button")
     formSubmit.setAttribute('id', 'submit')
     formSubmit.setAttribute("value", "Submit")
 
-let leftForm = document.createElement('div')
-let rightForm = document.createElement('div')
+const leftForm = document.createElement('div')
+const rightForm = document.createElement('div')
 
-//Putting the form on the page and appending the left / right sides
+// Putting the form on the page and appending the left / right sides
     newToDo.appendChild(toDoForm)
     leftForm.append(tName,tDueDate,tDescription,tProject)
         leftForm.classList.add('toDoContent')
     rightForm.append(formSubmit)
         rightForm.classList.add('toDoOptions')
     toDoForm.append(leftForm,rightForm)
-
-    let submitButton = document.getElementById('submit')
+    
+    const submitButton = document.getElementById('submit')
     submitButton.addEventListener('click', toDoCreator)
 
 }
 
 function unhideToDoForm() {
-    let toDoForm = document.querySelector('#ToDoForm')
+    const toDoForm = document.querySelector('#ToDoForm')
 
         console.log(toDoForm.classList)
     switch ( true ) {

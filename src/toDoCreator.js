@@ -5,26 +5,26 @@ import Storage from './Storage'
 
 function toDoCreator() {
     
-    let tName = document.querySelector('#tName')
-    let tDescription = document.querySelector('#tDescription')
-    let tDueDate = document.querySelector('#tDueDate')
+    const tName = document.querySelector('#tName')
+    const tDescription = document.querySelector('#tDescription')
+    const tDueDate = document.querySelector('#tDueDate')
     // let tPriority = document.querySelector('#tPriority')
-    let tProject = document.querySelector('#projectSelect')
-    let formSubmit = document.querySelector('#formSubmit')
+    const tProject = document.querySelector('#projectSelect')
+    const formSubmit = document.querySelector('#formSubmit')
 
 
-    let toDoInfo = document.querySelectorAll('input')
+    const toDoInfo = document.querySelectorAll('input')
     
-    let title = tName.value
-    let description = tDescription.value
-    let dueDate = tDueDate.value 
-    let priority = "tPriority.value"
-    let project = tProject.value
-    //If all the fields are filled then create new ToDo object, import into array and run cardCreator.
+    const title = tName.value
+    const description = tDescription.value
+    const dueDate = tDueDate.value 
+    const priority = "tPriority.value"
+    const project = tProject.value
+    // If all the fields are filled then create new ToDo object, import into array and run cardCreator.
     if(title != "" && description != "" && dueDate != "" && priority != "" && project != "" ){
     
    
-    let newToDo = new toDoArray.ToDoConstructor(title, description, dueDate, priority, project)
+    const newToDo = new toDoArray.ToDoConstructor(title, description, dueDate, priority, project)
 
     toDoArray.toDoArray.unshift(newToDo)
     Storage.toDoStorageSetup()
