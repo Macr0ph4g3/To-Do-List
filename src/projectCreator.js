@@ -1,7 +1,6 @@
 import projectsDom from './projectsDom'
 import projectsArray from "./projectsArray"
 import Storage from "./Storage"
-
 const projectCreatorPlus = document.getElementsByClassName('projectCreator')
 projectCreatorPlus[0].addEventListener('click',pForm)
 
@@ -18,7 +17,7 @@ function pForm() {
             pName.setAttribute("placeHolder", "New Project");
             pName.setAttribute("id", "pName");
     
-        const confirmButton = document.createElement('i');
+            const confirmButton = document.createElement('i');
             confirmButton.classList.add('pConfirm','fa-solid','fa-plus');
     
         newProjectForm.appendChild(pName);
@@ -33,18 +32,25 @@ function projectCreator() {
     const projectInfo = document.querySelector('#pName')
     const newProject = projectInfo.value
 
-// If all the fields are filled then create new ToDo object, import into array and run cardCreator.
+    // If all the fields are filled then create new ToDo object, import into array and run cardCreator.
 if(newProject != ""){
 
-const properTitle = newProject.charAt(0).toUpperCase() + newProject.slice(1);
-const projectArray = projectsArray.projectsArray;
-const duplicateProject = projectArray.filter(function(project){
+
+    const properTitle = newProject.charAt(0).toUpperCase() + newProject.slice(1);
+
+    const projectArray = projectsArray.projectsArray;
+
+    const duplicateProject = projectArray.filter(function(project){
     return project.title == properTitle;
+
 })
 
 
 switch (duplicateProject.length) {
+
     case (duplicateProject.length = 0) :
+    
+
     const project = new projectsArray.ProjectsConstructor("color", properTitle, "Yes");
         /* vendors contains the element we're looking for */
         projectsArray.projectsArray.push(project);
@@ -68,7 +74,9 @@ switch (duplicateProject.length) {
     tProjectSelector.appendChild(projectOption)
     });
     
-}}}
+}
+}
+}
 
 
 export default projectCreator
