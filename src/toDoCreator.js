@@ -1,6 +1,5 @@
 import toDoArray from './objectArray.js'
 import cardCreator from './toDoCardCreator'
-import projectsArray from './projectsArray'
 import Storage from './Storage'
 
 function toDoCreator() {
@@ -10,10 +9,6 @@ function toDoCreator() {
     const tDueDate = document.querySelector('#tDueDate')
     // let tPriority = document.querySelector('#tPriority')
     const tProject = document.querySelector('#projectSelect')
-    const formSubmit = document.querySelector('#formSubmit')
-
-
-    const toDoInfo = document.querySelectorAll('input')
     
     const title = tName.value
     const description = tDescription.value

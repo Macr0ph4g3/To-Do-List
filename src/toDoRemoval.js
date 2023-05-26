@@ -3,21 +3,20 @@ import cardCreator from './toDoCardCreator'
 import Storage from './Storage'
 
 
-function deleteToDo() {
-    let trashList = document.querySelectorAll('.toDoTrash')
+function deleteEventListener() {
+    const trashList = document.querySelectorAll('.toDoTrash')
     trashList.forEach(trash => {
-        trash.addEventListener('click', test)
+        trash.addEventListener('click', deleteItem)
     });
     
 }
-function test() {
-    console.log('hi')
-    let parentID = this.parentElement.parentElement.dataset.id
-    console.log(parentID)
+function deleteItem() {
+    // eslint-disable-next-line no-invalid-this
+    const parentID = this.parentElement.parentElement.dataset.id
     toDoArray.toDoArray.splice(parentID, 1)
     Storage.toDoStorageSetup()
     cardCreator(toDoArray.toDoArray)
 
 }
 
-export default {deleteToDo}
+export default {deleteEventListener}

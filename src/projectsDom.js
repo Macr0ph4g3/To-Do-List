@@ -12,12 +12,11 @@ function projectsDom(object) {
     newProjects.classList.add('projectList');
     leftMain.appendChild(newProjects);
     object.forEach((element, index) => {
-        let color = element.color
-        let title = element.title
-        let deletable = element.deletable
+        // const color = element.color
+        const title = element.title
+        // const deletable = element.deletable
 
 // this creates the div that will hold both Title and color circle
-//
 const projectBox = document.createElement('li')
 const project = document.createElement('div')
 const projectRemove = document.createElement('div')
@@ -36,18 +35,13 @@ projectRemove.classList.add('projectRemove','fa-solid', 'fa-plus','fa-lg')
 function selectProject() {
         projectsArray.selectedProject = object[projectBox.dataset.pi].title
         cardCreator(toDoArray.toDoArray)
-
-    
 }
-    
-        newProjects.appendChild(projectBox)
-        projectBox.appendChild(project)   
-        projectBox.appendChild(projectRemove)      
-   
+newProjects.appendChild(projectBox)
+projectBox.appendChild(project)   
+projectBox.appendChild(projectRemove)      
+});
 
-        
-    });
-    projectRemoval.deleteProject();
+projectRemoval.deleteProject();
 
 }
 
